@@ -1,0 +1,170 @@
+.road {
+    width: 100%;
+    min-height: 168px;
+}
+.road-men {
+    margin: 0;
+    min-height: 140px;
+    position: relative;
+    @media screen and (min-width: 700px) {
+        min-height: 300px;
+    }
+    @media screen and (min-width: 1401px) {
+        min-height: 200px;
+    }
+    .road-men_img {
+        width: 100%;
+        min-height: 180px;
+        z-index: 10;
+        position: absolute;
+        @media screen and (max-width: 1400px) {
+            background: url("../images/Group62.png") 0 0 / cover no-repeat;
+        }
+        @media screen and (min-width: 1401px) {
+            min-height: 865px;
+            margin-top: -40px;
+            background: url("../images/Group652.png") 0 0 / cover no-repeat;
+        }
+    }
+    .road-men_shadow {
+        position: absolute;
+
+        width: 100%;
+        min-height: 180px;
+        z-index: -1;
+        @media screen and (max-width: 1400px) {
+            margin-top: 40px;
+            background: url("../images/Rectangle30.png") 50% / cover no-repeat;
+        }
+        @media screen and (min-width: 1401px) {
+            margin-top: -16px;
+            background: url("../images/Group65.png") 0 0 / cover no-repeat;
+        }
+    }
+    .road-men_img {
+        @media screen and (min-width: 279px) {
+            min-height: 192px;
+        }
+        @media screen and (min-width: 300px) {
+            min-height: 210px;
+        }
+        @media screen and (min-width: 339px) {
+            min-height: 240px;
+        }
+        @media (min-width: 360px) and (max-width: 410px) {
+            min-height: 248px;
+        }
+        @media (min-width: 374px) and (max-width: 375px) {
+            min-height: 252px;
+            margin-top: -20px;
+        }
+        @media screen and (min-width: 411px) {
+            margin-top: -20px;
+            min-height: 280px;
+        }
+        @media screen and (min-width: 540px) {
+            min-height: 360px;
+        }
+
+        @media screen and (min-width: 700px) {
+            min-height: 530px;
+        }
+        @media screen and (min-width: 900px) {
+            min-height: 640px;
+        }
+        @media screen and (min-width: 950px) {
+            min-height: 700px;
+        }
+        @media screen and (min-width: 1000px) {
+            min-height: 705px;
+            margin-top: -110px;
+        }
+        @media screen and (min-width: 1100px) {
+            min-height: 610px;
+        }
+        @media screen and (min-width: 1200px) {
+            min-height: 824px;
+        }
+        @media screen and (min-width: 1401px) {
+            min-height: 1180px;
+            margin-top: -300px;
+        }
+        @media screen and (min-width: 1470px) {
+            min-height: 1180px;
+        }
+        @media screen and (min-width: 1535px) {
+            min-height: 1265px;
+        }
+        @media screen and (min-width: 1620px) {
+            min-height: 1310px;
+        }
+        @media screen and (min-width: 1720px) {
+            min-height: 1450px;
+        }
+        @media screen and (min-width: 1900px) {
+            min-height: 1500px;
+        }
+        @media screen and (min-width: 2000px) {
+            min-height: 1600px;
+        }
+        @media screen and (min-width: 2050px) {
+            min-height: 1750px;
+        }
+    }
+    .road-men_shadow {
+        @media screen and (min-width: 279px) {
+            min-height: 192px;
+        }
+        @media screen and (min-width: 300px) {
+            min-height: 230px;
+        }
+        @media screen and (min-width: 339px) {
+            min-height: 250px;
+        }
+        @media (min-width: 360px) and (max-width: 410px) {
+            min-height: 290px;
+        }
+        @media screen and (min-width: 411px) {
+            min-height: 360px;
+        }
+        @media screen and (min-width: 540px) {
+            min-height: 500px;
+        }
+        @media screen and (min-width: 700px) {
+            min-height: 660px;
+        }
+        @media screen and (min-width: 900px) {
+            min-height: 830px;
+        }
+        @media screen and (min-width: 1000px) {
+            min-height: 705px;
+        }
+        @media screen and (min-width: 1100px) {
+            min-height: 800px;
+        }
+        @media screen and (min-width: 1200px) {
+            min-height: 1000px;
+        }
+        @media screen and (min-width: 1401px) {
+            min-height: 909px;
+        }
+        @media screen and (min-width: 1490px) {
+            min-height: 1000px;
+        }
+        @media screen and (min-width: 1535px) {
+            min-height: 1100px;
+        }
+        @media screen and (min-width: 1720px) {
+            min-height: 1222px;
+        }
+        @media screen and (min-width: 1900px) {
+            min-height: 1300px;
+        }
+        @media screen and (min-width: 2000px) {
+            min-height: 1420px;
+        }
+        @media screen and (min-width: 2050px) {
+            min-height: 1550px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import "./variables.scss";
+html {
+    box-sizing: border-box;
+    background-size: cover;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+body {
+    margin: 0;
+    color: white;
+}

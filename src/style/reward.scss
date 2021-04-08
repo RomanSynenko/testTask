@@ -1,0 +1,59 @@
+.reward-section {
+    .reward-price {
+        padding: 20px 19px 0px 20px;
+        @media screen and (min-width: 1401px) {
+            padding: 20px 0px 0px 0;
+        }
+    }
+    .reward-section_title {
+        font-size: 30px;
+        line-height: 35px;
+        font-weight: 500;
+        @media screen and (max-width: 1400px) {
+            padding: 42px 19px 0px 20px;
+        }
+        @media screen and (min-width: 1401px) {
+            padding: 75px 0px 20px 0;
+            width: 420px;
+        }
+    }
+    .reward-section_delivery {
+        border: 1px solid #413d5b;
+        border-radius: 12px;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+        padding: 25px 20px 25px 19px;
+        @media screen and (max-width: 1400px) {
+            margin: 25px 19px 0px 20px;
+        }
+        @media screen and (min-width: 1401px) {
+            width: 100%;
+            padding: 23px 57px;
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+    .reward-section_price {
+        font-size: 17px;
+        line-height: 21px;
+        font-weight: 400;
+        @media screen and (min-width: 1401px) {
+            opacity: 0.5;
+        }
+    }
+    .reward-section_price-w {
+        font-size: 17px;
+        line-height: 21px;
+        font-weight: 400;
+        opacity: 1;
+    }
+    .reward-section_price-z {
+        font-size: 10px;
+        vertical-align: middle;
+        line-height: 11px;
+        opacity: 0.5;
+        display: inline-block;
+        margin-top: -3px;
+    }
+}
