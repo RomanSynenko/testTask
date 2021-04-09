@@ -20,7 +20,7 @@ const state = {
     hourLeft: 1,
     hourRight: 8,
     minutesLeft: 1,
-    minutesRight: 5,
+    minutesRight: 5
 }
 function addZero(value) {
     return String(value).padStart(2, '0');
@@ -39,11 +39,13 @@ const clearTime = (event) => {
 const createrTimer = ({ hourLeft, hourRight, minutesLeft, minutesRight }) => {
     const hour = addZero(Number(`${hourLeft}${hourRight}`));
     const minutes = addZero(Number(`${minutesLeft}${minutesRight}`));
-    setDate(hour, minutes)
+    setDate(hour, minutes);
+    addTimeNumeral(hour, minutes);
 };
 const createrState = () => {
     if (state.minutesRight < 10) {
         state.minutesRight += 1;
+        state.minutesAnalogTimer += 1;
     }
     if (state.minutesRight > 9) {
         state.minutesRight = 0;
@@ -59,7 +61,8 @@ const createrState = () => {
         state.minutesLeft = 0;
         state.hourLeft += 1;
     }
-    if (state.hourLeft > 2 && state.hourRight > 4) {
+
+    if (state.hourLeft >= 2 && state.hourRight > 3) {
         state.minutesRight = 0;
         state.minutesLeft = 0;
         state.hourLeft = 0;
@@ -69,17 +72,10 @@ const createrState = () => {
 };
 
 const setDate = (hour = 18, minutes = 15) => {
-    const now = new Date();
-    const seconds = now.getSeconds();
-
-    const minutesDegrees = Math.floor(((minutes / 60) * 360) + ((seconds / 60) * 6) + 90);
+    const minutesDegrees = Math.floor(((minutes / 60) * 360) + 90);
     const hourDegrees = Math.floor(((hour / 12) * 360) + ((minutes / 60) * 30) + 90);
-
     minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-
-
-    addTimeNumeral(hour, minutes);
 };
 const addTimeNumeral = (hour, minutes) => {
     hourNumetalLeft.value = hour.toString().slice(0, 1);
