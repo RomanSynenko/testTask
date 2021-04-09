@@ -56,9 +56,9 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            background: url("../images/Group632.png") 49% no-repeat;
+            background: url("../images/Group632.png") 50% no-repeat;
             @media screen and (min-width: 1400px) {
-                background: url("../images/Group457.png") 49% no-repeat;
+                background: url("../images/Group457.png") 50% no-repeat;
             }
         }
         .hand {
@@ -73,7 +73,7 @@
         .hour-hand {
             transition: all 0.9s;
             top: 49%;
-            left: 18%;
+            left: 17%;
             width: 93px;
             height: 17px;
             @media screen and (min-width: 1400px) {

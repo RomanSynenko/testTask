@@ -68,7 +68,7 @@ const createrState = () => {
     createrTimer(state);
 };
 
-const setDate = (hour = 12, minutes = 34) => {
+const setDate = (hour, minutes) => {
     const now = new Date();
     const seconds = now.getSeconds();
     const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
