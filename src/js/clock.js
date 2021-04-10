@@ -79,7 +79,7 @@ const createrState = () => {
 
 const arrowDegrees = (minutesDegrees, hourDegrees) => {
     if (state.circleMinutes >= 1) {
-        minutesDegrees = Number(minutesDegrees) + 358 * state.circleMinutes;
+        minutesDegrees = Number(minutesDegrees) + 359 * state.circleMinutes;
         minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
     }
     if (state.circleHour >= 1) {
