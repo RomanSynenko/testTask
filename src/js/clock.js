@@ -18,16 +18,21 @@ const state = {
 }
 let interval = null;
 const setDate = (hour = 18, minutes = 15) => {
+
     if (Number(hour) === 0 && Number(minutes) === 0) {
-        state.circleMinutes += 1;
         state.circleHour += 1;
     }
+    if (Number(minutes) === 0) {
+        state.circleMinutes += 1;
+    }
     const minutesDegrees = Math.floor(((minutes / 60) * 360) + 90);
-    const hourDegrees = Math.floor(((hour / 12) * 360) + ((minutes / 60) * 30) + 90);
+    const hourDegrees = Math.floor(((hour / 12) * 360) + 90);
+    console.log(hourDegrees)
     arrowDegrees(minutesDegrees, hourDegrees);
 };
 const handleTime = (event) => {
     state[event.currentTarget.id] = Number(event.currentTarget.value);
+    console.log(state[event.currentTarget.id] = Number(event.currentTarget.value))
     interval = setInterval(createrState, 1000);
 };
 const createrTimer = ({ hourLeft, hourRight, minutesLeft, minutesRight }) => {

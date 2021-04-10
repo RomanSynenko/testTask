@@ -67,11 +67,11 @@
             background: #786e79;
             transform-origin: 100%;
             transform: rotate(90deg);
-            transition: all 0.5s;
+            transition: all 0.9s;
             transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
         }
         .hour-hand {
-            transition: all 0.9s;
+            transition: all 1.8s;
             top: 49%;
             left: 17%;
             width: 93px;
