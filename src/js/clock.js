@@ -1,12 +1,5 @@
-
-const refs = {
-    minuteHand: document.querySelector('.minute-hand'),
-    hourHand: document.querySelector('.hour-hand'),
-    hourNumetalLeft: document.querySelector('#hourLeft'),
-    hourNumetalRight: document.querySelector('#hourRight'),
-    minutesNumetalLeft: document.querySelector('#minutesLeft'),
-    minutesNumetalRight: document.querySelector('#minutesRight'),
-}
+import refs from './refs';
+import addZero from './addZero';
 const {
     minuteHand,
     hourHand,
@@ -15,32 +8,39 @@ const {
     minutesNumetalLeft,
     minutesNumetalRight
 } = refs;
-
 const state = {
-    hourLeft: 1,
-    hourRight: 8,
-    minutesLeft: 1,
-    minutesRight: 5
+    hourLeft: 2,
+    hourRight: 3,
+    minutesLeft: 5,
+    minutesRight: 5,
+    circleMinutes: 0,
+    circleHour: 0
 }
-function addZero(value) {
-    return String(value).padStart(2, '0');
-};
-
 let interval = null;
+const setDate = (hour = 18, minutes = 15) => {
+    if (Number(hour) === 0 && Number(minutes) === 0) {
+        state.circleMinutes += 1;
+        state.circleHour += 1;
+    }
+    const minutesDegrees = Math.floor(((minutes / 60) * 360) + 90);
+    const hourDegrees = Math.floor(((hour / 12) * 360) + ((minutes / 60) * 30) + 90);
+    arrowDegrees(minutesDegrees, hourDegrees);
+};
 const handleTime = (event) => {
     state[event.currentTarget.id] = Number(event.currentTarget.value);
     interval = setInterval(createrState, 1000);
-};
-const clearTime = (event) => {
-    clearInterval(interval);
-    event.currentTarget.value = '';
-
 };
 const createrTimer = ({ hourLeft, hourRight, minutesLeft, minutesRight }) => {
     const hour = addZero(Number(`${hourLeft}${hourRight}`));
     const minutes = addZero(Number(`${minutesLeft}${minutesRight}`));
     setDate(hour, minutes);
     addTimeNumeral(hour, minutes);
+};
+const addTimeNumeral = (hour, minutes) => {
+    hourNumetalLeft.value = hour.toString().slice(0, 1);
+    hourNumetalRight.value = hour.toString().slice(1, 2);
+    minutesNumetalLeft.value = minutes.toString().slice(0, 1);
+    minutesNumetalRight.value = minutes.toString().slice(1, 2);
 };
 const createrState = () => {
     if (state.minutesRight < 10) {
@@ -71,17 +71,22 @@ const createrState = () => {
     createrTimer(state);
 };
 
-const setDate = (hour = 18, minutes = 15) => {
-    const minutesDegrees = Math.floor(((minutes / 60) * 360) + 90);
-    const hourDegrees = Math.floor(((hour / 12) * 360) + ((minutes / 60) * 30) + 90);
+
+const arrowDegrees = (minutesDegrees, hourDegrees) => {
+    if (state.circleMinutes >= 1) {
+        minutesDegrees = Number(minutesDegrees) + 358 * state.circleMinutes;
+        minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+    }
+    if (state.circleHour >= 1) {
+        hourDegrees = Number(hourDegrees) + 720 * state.circleHour;
+        hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+    }
     minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
     hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 };
-const addTimeNumeral = (hour, minutes) => {
-    hourNumetalLeft.value = hour.toString().slice(0, 1);
-    hourNumetalRight.value = hour.toString().slice(1, 2);
-    minutesNumetalLeft.value = minutes.toString().slice(0, 1);
-    minutesNumetalRight.value = minutes.toString().slice(1, 2);
+const clearTime = (event) => {
+    clearInterval(interval);
+    event.currentTarget.value = '';
 };
 window.addEventListener('load', handleTime);
 hourNumetalLeft.addEventListener('focus', clearTime);
